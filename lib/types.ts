@@ -10,4 +10,5 @@ export type results = {
   url : string
   image : string
   id : number
+  colors : string
 }
