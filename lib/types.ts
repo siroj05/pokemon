@@ -22,24 +22,36 @@ export type detailPokemonType = {
       }
     }
   }
-  stats : {
-    base_stat : number
-    stat : {
-      name : string
-      url : string
-    }
-  }[]
-  types : {
-    slot : number
-    type : {
-      name : string
-      url : string
-    }
-  }[]
+  stats : stat[]
+  types : typesPokemon[]
   weight : number
   height : number
   species : {
     name : string
     url : string
+  }
+  color : string
+  abilities : abilities[]
+}
+
+export type typesPokemon = {
+  slot : number
+    type : {
+      name : string
+      url : string
+  }
+}
+
+export type stat = {
+  base_stat : number
+    stat : {
+      name : string
+      url : string
+    }
+}
+
+export type abilities = {
+  ability : {
+    name : string
   }
 }

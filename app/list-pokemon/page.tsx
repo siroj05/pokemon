@@ -4,7 +4,7 @@ import PokemonCard from "@/components/card";
 import useSWR from "swr";
 import PaginationPokemon from "../../components/pagination";
 import SearchPokemon from "@/components/search";
-
+import Image from 'next/image';
 export default function ListPokemon({
   searchParams
 }:{
@@ -13,7 +13,6 @@ export default function ListPokemon({
     page?:string
   }
 }) {
-  // const searchParams = useSearchParams();
   const page = Number(searchParams?.page || 1);
   const query = searchParams?.query || ""
 
@@ -30,7 +29,9 @@ export default function ListPokemon({
       {error || data?.results.length == 0 ? (
         <div className="font-bold text-center">Not Found</div>
       ) : isLoading ? (
-        <div className="font-bold text-center">Loading...</div>
+        <div className="flex items-center justify-center mt-10">
+          <Image className="animate-spin" src='/loading.png' alt="" width={90} height={90}/>
+        </div>
       ) : (
         <>
           <div className="flex justify-center my-5">

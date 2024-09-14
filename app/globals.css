@@ -68,11 +68,63 @@
 .text-stroke-3 {
     -webkit-text-stroke: 4px rgb(71, 71, 169);
 }
-
 .bg-header {
   background-color: rgb(61, 61, 138);
 }
-
 .bg-progress {
   background-color: rgb(142, 142, 238);
+}
+.color-normal{
+  background-color: rgb(170, 170, 153);
+}
+.color-fire{
+  background-color: rgb(255, 68, 34);
+}
+.color-water{
+  background-color: rgb(51, 153, 255);
+}
+.color-electric{
+  background-color: rgb(255, 204, 51);
+}
+.color-grass{
+  background-color: rgb(119, 204, 85);
+}
+.color-ice{
+  background-color: rgb(102, 204, 255);
+}
+.color-fighting{
+  background-color: rgb(187, 85, 68);
+}
+.color-poison{
+  background-color: rgb(170, 85, 153);
+}
+.color-ground{
+  background-color: rgb(221, 187, 85);
+}
+.color-flying{
+  background-color: rgb(136, 153, 255);
+}
+.color-flying{
+  background-color: rgb(255, 85, 153);
+}
+.color-bug{
+  background-color: rgb(170, 187, 34);
+}
+.color-rock{
+  background-color: rgb(187, 170, 102);
+}
+.color-ghost{
+  background-color: rgb(102, 102, 187);
+}
+.color-dragon{
+  background-color: rgb(119, 102, 238);
+}
+.color-dark{
+  background-color: rgb(119, 85, 68);
+}
+.color-steel{
+  background-color: rgb(170, 170, 187);
+}
+.color-fairy{
+  background-color: rgb(238, 153, 238);
 }
