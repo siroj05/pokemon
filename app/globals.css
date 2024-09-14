@@ -64,3 +64,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.text-stroke-3 {
+    -webkit-text-stroke: 4px rgb(71, 71, 169);
+}
+
+.bg-header {
+  background-color: rgb(61, 61, 138);
+}
+
+.bg-progress {
+  background-color: rgb(142, 142, 238);
+}
