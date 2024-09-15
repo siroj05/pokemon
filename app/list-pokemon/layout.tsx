@@ -2,14 +2,13 @@
 import { ReactNode } from "react";
 import Image from 'next/image';
 import Link from "next/link";
-import { useStatePokedex } from "./pokedex/store";
 
 interface Props {
   children: ReactNode;
 }
 
 export default function Layout({ children }: Props) {
-  const { pokedex } = useStatePokedex((state) => state)
+  // const { pokedex } = useStatePokedex((state) => state)
   return (
     <>
       <div className="text-7xl bg-header text-yellow-400 text-stroke-3 text-center border-b-8 border-yellow-400 p-5 font-bold">

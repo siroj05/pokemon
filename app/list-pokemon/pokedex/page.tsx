@@ -18,6 +18,7 @@ export default function Pokedex () {
         {
           pokedex?.map((item,i) => (
             <PokemonCard
+            key={i}
               item={item}
             />
           ))

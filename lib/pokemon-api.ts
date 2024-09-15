@@ -67,7 +67,7 @@ export default async function detailPokemon (name : string) {
   const genera = species?.genera.find((item:genus) => item.language.name == "en")
   const flavorTextEntries = species?.flavor_text_entries.find((item:flavorTextEntries) => item.language.name == "en" && item.version.name == 'red')
 
-  let detailPokemonData = {...data, genera:genera, flavorTextEntries : flavorTextEntries, evolution : evolutionImg, color:species}
+  const detailPokemonData = {...data, genera:genera, flavorTextEntries : flavorTextEntries, evolution : evolutionImg, color:species}
   
   return detailPokemonData
 }

@@ -2,26 +2,20 @@ import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationItem
 } from "@/components/ui/pagination-base";
-import { useRouter } from "next/router";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 interface Props {
   count : number
   pageSize : number
-  page : number
 }
 
 export default function PaginationPokemon(
   {
     count,
-    pageSize,
-    page
+    pageSize
   }:Props
 ) {
   const pathname = usePathname()

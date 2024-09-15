@@ -3,7 +3,7 @@
 import { results } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useStatePokedex } from "@/app/list-pokemon/pokedex/store";
 import { usePathname } from "next/navigation";
 
@@ -37,7 +37,7 @@ export default function PokemonCard({ item, color }: Props) {
 
   const handleClick = (newPokemon: results) => {
     const savedPokedex = localStorage.getItem("pokedex");
-    let currentPokedex: results[] = savedPokedex
+    const currentPokedex: results[] = savedPokedex
       ? JSON.parse(savedPokedex)
       : [];
     const isAlreadyInPokedex = currentPokedex.some(
@@ -52,7 +52,7 @@ export default function PokemonCard({ item, color }: Props) {
     }
   };
 
-  let colorClass =
+  const colorClass =
     colorMap[item.colors] || (color && colorMap[color]) || "bg-gray-200";
 
   const handleDrop = (item:any) => {
