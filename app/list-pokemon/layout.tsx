@@ -11,10 +11,18 @@ export default function Layout({ children }: Props) {
   // const { pokedex } = useStatePokedex((state) => state)
   return (
     <>
-      <div className="text-7xl bg-header text-yellow-400 text-stroke-3 text-center border-b-8 border-yellow-400 p-5 font-bold">
+      <div className="md:text-7xl max-sm:text-xl bg-header text-yellow-400 text-center border-b-8 border-yellow-400 p-5 font-bold">
         <div className="flex justify-between gap-3 mx-10">
           <Link className='flex' href={'/'}>
-            <Image className="hover:animate-spin" src='/pokemon-go.png' alt="" width={80} height={80}/>
+            <Image 
+              className="hover:animate-spin sm:w-5 sm:h-5 md:w-16 md:h-16 lg:w-20 lg:h-20" 
+              src='/pokemon-go.png' 
+              alt="Pokemon Logo" 
+              width={50} 
+              height={50} 
+              layout="intrinsic" /* Atur ukuran yang proporsional */ 
+              objectFit="cover"
+            />
             <div className="my-auto">
               Pokédex
             </div>
@@ -25,7 +33,9 @@ export default function Layout({ children }: Props) {
         </div>
       </div>
       <div className="max-w-4xl my-10 w-full mx-auto">
-        {children}
+        <div className="lg:mx-20 max-sm:mx-2">
+          {children}
+        </div>
       </div>
     </>
   );

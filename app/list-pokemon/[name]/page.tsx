@@ -15,7 +15,7 @@ export default async function PokemonDetail({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="md:grid md:grid-cols-2 md:gap-1 sm:flex">
         <img
           src={`${detail?.sprites?.other?.["official-artwork"]?.front_default}`}
           alt=""
@@ -28,12 +28,12 @@ export default async function PokemonDetail({
             ))}
           </div>
           <div className="flex gap-1">
-            <p className="my-auto font-semibold">Abilities :</p>
+            <p className="my-auto font-semibold max-sm:text-sm">Abilities :</p>
             {detail?.abilities.map((item, i) => (
               <Badge
                 variant={"outline"}
                 key={i}
-                className="bg-slate-100 p-2 text-black"
+                className="bg-slate-100 md:p-2 text-black"
               >
                 {formatString(formatFirstLetter(item.ability.name))}
               </Badge>
@@ -47,7 +47,7 @@ export default async function PokemonDetail({
       <div className="my-10 flex flex-col gap-5">
         <Title>{detail?.genera?.genus}</Title>
         <p>{formattedText(detail?.flavorTextEntries?.flavor_text ?? "")}</p>
-        <div className="flex justify-between mx-20 text-xl">
+        <div className="md:flex md:justify-between md:mx-20 md:text-xl">
           <div>
             <p>
               <span className="font-semibold">Height : </span>
@@ -62,7 +62,7 @@ export default async function PokemonDetail({
           </div>
         </div>
         <Title>Evolution Chain</Title>
-        <div className="flex justify-center gap-10">
+        <div className="flex max-sm:justify-center gap-2 md:justify-between">
           {detail.evolution.map((item) => (
             <PokemonCard key={item} item={item} color={detail.color.color.name}/>
           ))}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useStatePokedex } from "@/app/list-pokemon/pokedex/store";
 import { usePathname } from "next/navigation";
+import { formatFirstLetter } from "@/lib/utils";
 
 type Props = {
   item: results;
@@ -69,18 +70,20 @@ export default function PokemonCard({ item, color }: Props) {
 
   return (
     <div className="relative transform transition-transform duration-300 hover:scale-105">
-      <div className={`w-[200px] md:w-[150px] shadow-xl p-3 ${colorClass} rounded-md`}>
+      <div className={` md:w-[150px] max-sm:w-[75px] shadow-xl p-3 ${colorClass} rounded-md`}>
         <Link href={`/list-pokemon/${item.name}`}>
           <img src={item.image} alt={item.name} className="w-full h-30" />
-          <div className="font-bold text-center">{item.name}</div>
         </Link>
+        <div className="flex justify-center">
+          <div className="font-bold md:text-center max-sm:text-[12px]">{formatFirstLetter(item.name)}</div>
+        </div>
         <div className="flex justify-center">
           {path === "/list-pokemon/pokedex" ? (
             <button
               onClick={() => handleDrop(item)}
-              className="hover:bg-blue-300 flex gap-2 bg-progress text-white rounded-sm px-5 border-2 border-white"
+              className="hover:bg-blue-300 flex gap-2 bg-progress text-white rounded-sm px-5 max-sm:px-4 border-2 border-white"
             >
-              <span>Drop</span>
+              <span className="max-sm:text-[10px]">Drop</span>
               <Image
                 className="hover:animate-spin my-auto"
                 src="/loading.png"
@@ -92,9 +95,9 @@ export default function PokemonCard({ item, color }: Props) {
           ) : (
             <button
               onClick={() => handleClick(item)}
-              className="hover:bg-blue-300 flex gap-2 bg-progress text-white rounded-sm px-5 border-2 border-white"
+              className="hover:bg-blue-300 flex gap-2 bg-progress text-white rounded-sm px-5 max-sm:px-4 border-2 border-white"
             >
-              <span>Add</span>
+              <span className="max-sm:text-[10px]">Add</span>
               <Image
                 className="hover:animate-spin my-auto"
                 src="/loading.png"

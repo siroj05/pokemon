@@ -35,7 +35,7 @@ export default function ListPokemon({
       ) : (
         <>
           <div className="flex justify-center my-5">
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-4 md:gap-5 lg:grid-cols-5 lg:gap-10 max-sm:gap-2">
               {data?.results.map((item, i) => (
                 <div key={i}>
                   <PokemonCard item={item} />
@@ -46,7 +46,6 @@ export default function ListPokemon({
           <PaginationPokemon
             count={data!.count}
             pageSize={pageSize}
-            page={page}
           />
         </>
       )}
