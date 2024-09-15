@@ -19,7 +19,9 @@ export default function Layout({ children }: Props) {
               Pokédex
             </div>
           </Link>
-          <Image className="hover:animate-spin my-auto border bg-white rounded-full" src='/loading.png' alt="" width={50} height={50}/>
+          <Link className="my-auto" href={'/list-pokemon/pokedex'}>
+            <Image className="hover:animate-spin border bg-white rounded-full" src='/loading.png' alt="" width={50} height={50}/>
+          </Link>
         </div>
       </div>
       <div className="max-w-4xl my-10 w-full mx-auto">
