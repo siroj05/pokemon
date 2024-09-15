@@ -18,6 +18,10 @@ export function formatFirstLetter(str : string){
   .toUpperCase() + str.slice(1)
 }
 
+export function formattedText(str:string){
+  return str.replace(/[\n\f]/g, ' ')
+}
+
 export function typeColor(str : string){
   switch(str.toLowerCase()){
     case 'normal' : return 'color-normal text-white'
@@ -40,4 +44,19 @@ export function typeColor(str : string){
     case 'fairy' : return 'color-fairy text-white'
     default : return 'bg-white text-black'
   }
+}
+
+export function getAllSpecies(chain:any) {
+  const speciesList = []
+  if (chain?.species) {
+    speciesList.push(chain.species)
+  }
+  chain.evolves_to.forEach((evolution:any) => {
+    speciesList.push(...getAllSpecies(evolution))
+  });
+  return speciesList;
+}
+
+export function convertGramToKilogram(grams:number) {
+  return grams / 1000
 }

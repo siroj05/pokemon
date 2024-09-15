@@ -30,8 +30,37 @@ export type detailPokemonType = {
     name : string
     url : string
   }
-  color : string
+  color : {
+    name : string
+  }
   abilities : abilities[]
+  genera : genus[]
+  flavor_text_entries : flavorTextEntries[]
+  evolution_chain : {
+    name : string
+    url : string
+    image : string
+  }
+}
+
+export type genus = {
+  genus : string
+  language : {
+    name : string
+    url : string
+  }
+}
+
+export type flavorTextEntries = {
+  flavor_text : string
+  language : {
+    name : string
+    url : string
+  }
+  version : {
+    name : string
+    url : string
+  }
 }
 
 export type typesPokemon = {
