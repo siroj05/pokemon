@@ -27,13 +27,13 @@ export default async function PokemonDetail({
               <BadgeType key={i} types={type} />
             ))}
           </div>
-          <div className="flex gap-1">
+          <div className="md:flex md:gap-1">
             <p className="my-auto font-semibold max-sm:text-sm">Abilities :</p>
             {detail?.abilities.map((item, i) => (
               <Badge
                 variant={"outline"}
                 key={i}
-                className="bg-slate-100 md:p-2 text-black"
+                className="bg-slate-100 md:p-2 text-black text-[13px]"
               >
                 {formatString(formatFirstLetter(item.ability.name))}
               </Badge>
