@@ -9,9 +9,10 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  const { pokedex } = useStatePokedex((state) => state)
+  const { pokedex } = useStatePokedex((state) => state);
+
   return (
-    <>
+    <div className="flex flex-col min-h-dvh">
       <div className="md:text-7xl max-sm:text-xl bg-header text-yellow-400 text-center border-b-8 border-yellow-400 p-5 font-bold">
         <div className="flex justify-between gap-3 mx-10">
           <Link className='flex' href={'/'}>
@@ -29,12 +30,12 @@ export default function Layout({ children }: Props) {
             </div>
           </Link>
           <Link className="my-auto" href={'/list-pokemon/pokedex'}>
-          <div className="relative">
-            <Image className="hover:animate-spin border bg-white rounded-full" src='/loading.png' alt="" width={50} height={50}/>
-            <div className="absolute left-0 top-0 bg-white rounded-full w-5">
-              <p className="text-sm text-red-600 ">{pokedex.length}</p>
+            <div className="relative">
+              <Image className="hover:animate-spin border bg-white rounded-full" src='/loading.png' alt="" width={50} height={50}/>
+              <div className="absolute left-0 top-0 bg-white rounded-full w-5">
+                <p className="text-sm text-red-600 ">{pokedex.length}</p>
+              </div>
             </div>
-          </div>
           </Link>
         </div>
       </div>
@@ -43,6 +44,9 @@ export default function Layout({ children }: Props) {
           {children}
         </div>
       </div>
-    </>
+      <div className="md:text-xl max-sm:text-sm bg-header text-white text-center p-5 mt-auto">
+        Created By Sirojjuddin Apendi
+      </div>
+    </div>
   );
 }
