@@ -1,6 +1,6 @@
 "use client";
 import detailPokemon from "@/lib/pokemon-api";
-import { convertGramToKilogram, formatFirstLetter, formatString, formattedText } from "@/lib/utils";
+import { convertGramToKilogram, convertToMeter, formatFirstLetter, formatString, formattedText } from "@/lib/utils";
 import BadgeType from "@/components/badge-type";
 import { Title } from "@/components/title";
 import Stats from "@/components/stats";
@@ -70,7 +70,7 @@ export default function PokemonDetail({
           <div>
             <p>
               <span className="font-semibold">Height : </span>
-              {data?.height}m
+              {convertToMeter(data?.height)}m
             </p>
           </div>
           <div>

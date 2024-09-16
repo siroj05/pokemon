@@ -63,5 +63,10 @@ export function getAllSpecies(chain:any) {
 
 export function convertGramToKilogram(grams?:number) {
   if(grams)return grams / 10
-  else 0
+  else return 0
+}
+
+export function convertToMeter(value?:number){
+  if(value) return value/10
+  else return 0
 }
