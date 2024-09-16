@@ -12,10 +12,14 @@ export function formatString(str : string) {
     .join(' ')
 }
 
-export function formatFirstLetter(str : string){
-  return str
-  .charAt(0)
-  .toUpperCase() + str.slice(1)
+export function formatFirstLetter(str? : string){
+  if(str){
+    return str
+    .charAt(0)
+    .toUpperCase() + str.slice(1)
+  }else{
+    return ''
+  }
 }
 
 export function formattedText(str:string){
@@ -57,6 +61,7 @@ export function getAllSpecies(chain:any) {
   return speciesList;
 }
 
-export function convertGramToKilogram(grams:number) {
-  return grams / 1000
+export function convertGramToKilogram(grams?:number) {
+  if(grams)return grams / 10
+  else 0
 }

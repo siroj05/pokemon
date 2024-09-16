@@ -5,6 +5,9 @@ import useSWR from "swr";
 import PaginationPokemon from "../../components/pagination";
 import SearchPokemon from "@/components/search";
 import Image from 'next/image';
+// import Link from "next/link";
+// import { Button } from "@/components/ui/button";
+import BackToList from "@/components/back-to-list";
 export default function ListPokemon({
   searchParams
 }:{
@@ -20,14 +23,17 @@ export default function ListPokemon({
   const { data, isLoading, error } = useSWR(["getPokemonList", page, pageSize, query], () =>
     getPokemonList(page, pageSize, query)
   );
-
+  
   return (
     <>
       <div className="sticky top-10 z-50 flex justify-center ">
         <SearchPokemon />
       </div>
       {error || data?.results.length == 0 ? (
-        <div className="font-bold text-center">Not Found</div>
+        <div className="font-bold text-center">
+          Not Found
+          <BackToList/>
+        </div>
       ) : isLoading ? (
         <div className="flex items-center justify-center mt-10">
           <Image className="animate-spin" src='/loading.png' alt="" width={90} height={90}/>
