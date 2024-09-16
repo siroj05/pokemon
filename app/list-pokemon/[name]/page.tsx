@@ -70,13 +70,13 @@ export default function PokemonDetail({
           <div>
             <p>
               <span className="font-semibold">Height : </span>
-              {data?.height}
+              {data?.height}m
             </p>
           </div>
           <div>
             <p>
               <span className="font-semibold">Weight : </span>
-              {convertGramToKilogram(data?.weight)}
+              {convertGramToKilogram(data?.weight)}Kg
             </p>
           </div>
         </div>
