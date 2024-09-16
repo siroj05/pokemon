@@ -51,30 +51,44 @@ export default function PaginationPokemon(
 
   return (
     <Pagination>
-      <PaginationContent className="flex gap-3">
+      <PaginationContent className="flex gap-2 items-center justify-center">
         <PaginationItem>
-          {
-            currentPage-1 !== 0 &&
-            <Link href={createPageURL(currentPage-1)}>{'Prev'}</Link>
-          }
+          {currentPage - 1 !== 0 && (
+            <Link
+              href={createPageURL(currentPage - 1)}
+              className="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition"
+            >
+              Prev
+            </Link>
+          )}
         </PaginationItem>
-        {
-          pageNumbers.map((number, index) => (
-            <PaginationItem key={index}>
-              { number == '...'? (
-                <PaginationEllipsis />
-              ): 
-                <Link href={createPageURL(number)}>{number}</Link>
-              }
-            </PaginationItem>
-          ))
-        }
+        {pageNumbers.map((number, index) => (
+          <PaginationItem key={index}>
+            {number === "..." ? (
+              <PaginationEllipsis className="px-2 py-1" />
+            ) : (
+              <Link
+                href={createPageURL(number)}
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition ${
+                  number === currentPage
+                    ? "bg-header text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                {number}
+              </Link>
+            )}
+          </PaginationItem>
+        ))}
         <PaginationItem>
-          {
-            pageNumbers.length > 5 &&
-            <Link href={createPageURL(currentPage+1)}>
-            {'Next'}
-          </Link>}
+          {currentPage < sum && (
+            <Link
+              href={createPageURL(currentPage + 1)}
+              className="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition"
+            >
+              Next
+            </Link>
+          )}
         </PaginationItem>
       </PaginationContent>
     </Pagination>
